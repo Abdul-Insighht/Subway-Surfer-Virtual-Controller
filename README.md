@@ -4,9 +4,6 @@ A real-time **gesture-based virtual controller** for Subway Surfers built using 
 This project allows controlling the game using **hand movements and gestures**, without any machine learning models.
 
 ---
-## 📸 Demo
-
-![Gesture Controlled Subway Surfers Demo](Demo.gif.gif)
 
 ## 🚀 Features
 
