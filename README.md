@@ -1,47 +1,127 @@
-# Gesture Controlled Subway Surfers (Computer Vision)
+# 🎮 Subway Surfers Virtual Controller
 
 A real-time **gesture-based virtual controller** for Subway Surfers built using **Computer Vision**.  
-This project allows controlling the game using **hand movements and gestures**, without any machine learning models.
+Control the game using **hand movements and gestures** — no external controllers needed!
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green?logo=opencv)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10-orange?logo=google)
+
+---
+
+## 🎬 Demo
+
+![Demo](Demo.gif.gif)
 
 ---
 
 ## 🚀 Features
 
-- 🖐 Open palm → **Jump**
-- 🤙 Thumb + Pinky → **Slide**
-- 👈 Hand on left side → **Move Left**
-- 👉 Hand on right side → **Move Right**
+| Gesture | Action |
+|---------|--------|
+| 🖐 **Open Palm** (all fingers extended) | **Jump** |
+| 🤙 **Thumb + Pinky** only | **Slide** |
+| ✌️ **Index + Middle** only | **Hoverboard** |
+| 👈 **Hand on left side** | Move **Left** |
+| 👉 **Hand on right side** | Move **Right** |
+
 - 📊 Live FPS & action display
-- 🧠 Stable, rule-based gesture logic (No ML)
+- 🧠 Stable, rule-based gesture logic
+- 🎯 Uses MediaPipe Tasks API (Python 3.13 compatible)
 
 ---
 
 ## 🛠 Tech Stack
 
-- Python
-- OpenCV
-- MediaPipe
-- Pynput
+| Technology | Purpose |
+|------------|---------|
+| **Python** | Core programming language |
+| **OpenCV** | Camera capture & image processing |
+| **MediaPipe** | Real-time hand landmark detection |
+| **Pynput** | Keyboard simulation |
 
 ---
 
 ## ⚙️ How It Works
 
-- MediaPipe detects hand landmarks in real-time
-- Hand position determines left / right lane movement
-- Specific finger combinations trigger jump & slide
-- Keyboard inputs are simulated using `pynput`
+1. **MediaPipe** detects hand landmarks in real-time
+2. **Hand position** determines left/right lane movement
+3. **Finger combinations** trigger jump, slide & hoverboard
+4. **Keyboard inputs** are simulated using `pynput`
 
 This approach focuses on **stability, low latency, and simplicity**, making it suitable for real-time gameplay.
 
 ---
 
-## ▶️ How to Run
+## 📦 Installation
 
-1. Clone the repository:
+### Prerequisites
+
+- Python 3.9 - 3.13
+- A webcam
+
+### Steps
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/gesture-controlled-subway-surfers.git
+   git clone https://github.com/Abdul-Insighht/Subway-Surfer-Virtual-Controller.git
+   cd Subway-Surfer-Virtual-Controller
+   ```
 
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Download the MediaPipe Hand Landmarker model:**
+   ```bash
+   curl -o hand_landmarker.task https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+   ```
+
+   Or on Windows PowerShell:
+   ```powershell
+   Invoke-WebRequest -Uri "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task" -OutFile "hand_landmarker.task"
+   ```
+
+4. **Run the controller:**
+   ```bash
+   cd "Subway-Surfer Virtual Controller"
+   python Virtual_controller.py
+   ```
+
+5. **Start Subway Surfers** and enjoy gesture control!
+
+---
+
+## 🕹️ Usage Tips
+
+- Position your hand in front of the camera
+- Keep your hand within the frame
+- Use a well-lit environment for best detection
+- Press **Q** to quit the controller
+
+---
+
+## 📁 Project Structure
+
+```
+Subway-Surfer-Virtual-Controller/
+├── Subway-Surfer Virtual Controller/
+│   └── Virtual_controller.py    # Main controller script
+├── hand_landmarker.task          # MediaPipe hand tracking model
+├── Demo.gif.gif                  # Demo animation
+├── requirements.txt              # Python dependencies
+├── LICENSE
+└── README.md
+```
+
+---
+
+## ⚠️ Notes
+
+- **Python 3.13 Compatible**: Uses the modern MediaPipe Tasks API
+- **Camera Access**: Ensure your webcam is not used by other apps
+- **Permissions**: On some systems, pynput may require admin privileges
 
 ---
 
@@ -49,7 +129,7 @@ This approach focuses on **stability, low latency, and simplicity**, making it s
 
 **Hafiz Abdul Rehman**
 
-- 📧 Email: hafizrehman3321@gmail.com
+- 📧 Email: [hafizrehman3321@gmail.com](mailto:hafizrehman3321@gmail.com)
 - 💼 LinkedIn: [Hafiz Abdul Rehman](https://linkedin.com/in/hafiz-abdul-rehman-9990ab329)
 - 🐙 GitHub: [Abdul-Insighht](https://github.com/Abdul-Insighht)
 
@@ -63,6 +143,12 @@ If you find this project helpful, please consider:
 - 🔄 **Sharing** with others
 - 🐛 **Reporting** issues
 - 💡 **Suggesting** improvements
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
